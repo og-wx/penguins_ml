@@ -21,29 +21,6 @@ rfc = pickle.load(rf_pickle)
 unique_penguin_mapping = pickle.load(map_pickle)
 rf_pickle.close()
 map_pickle.close()
-# else:
-#     penguin_df = pd.read_csv(penguin_file)
-#     penguin_df = penguin_df.dropna()
-#     output = penguin_df['species']
-#     features = penguin_df[['island',
-#                            'bill_length_mm',
-#                            'bill_depth_mm',
-#                            'flipper_length_mm',
-#                            'body_mass_g',
-#                            'sex']]
-#     features = pd.get_dummies(features)
-#     output, unique_penguin_mapping = pd.factorize(output)
-#     x_train, x_test, y_train, y_test = train_test_split(features,
-#                                                         output,
-#                                                         test_size= 0.8)
-#     rfc = RandomForestClassifier(random_state = 15)
-#     rfc.fit(x_train.values, y_train)
-#     y_pred = rfc.predict(x_test.values)
-#     score = round(accuracy_score(y_pred, y_test), 2)
-#     st.write(f'''We trained a Random Forest Model on these data,
-#              it has a score of {score}! Use the inputs below to
-#              try out the model''')
-
 
 with st.form('user_inputs'):
     island = st.selectbox('Penguin Island',
